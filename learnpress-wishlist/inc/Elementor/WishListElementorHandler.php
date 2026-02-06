@@ -5,12 +5,13 @@
  * Hook to register widgets, dynamic tags, ... for LearnPress Elementor handler.
  *
  * @since 4.0.6
- * @version 1.0.0
+ * @version 1.0.1
  */
-namespace LP_Addon_Wishlist\Elementor;
+namespace LearnPress\Wishlist\Elementor;
 
 use LearnPress\Helpers\Singleton;
-use LP_Addon_Wishlist\Elementor\Widgets\CourseWishlistElementor;
+use LearnPress\Wishlist\Elementor\Widgets\CourseWishlistElementor;
+use LearnPress\Wishlist\Elementor\Widgets\CourseWishlistLoopElementor;
 
 class WishListElementorHandler {
 	use Singleton;
@@ -29,9 +30,10 @@ class WishListElementorHandler {
 	 * @return mixed
 	 */
 	public function register_widgets( array $lp_widgets ): array {
-		include_once LP_ADDON_WISHLIST_INC . 'Elementor/Widgets/CourseWishlistElementor.php';
+		//include_once LP_ADDON_WISHLIST_INC . 'Elementor/Widgets/CourseWishlistElementor.php';
 
-		$lp_widgets['course-wishlist'] = CourseWishlistElementor::class;
+		$lp_widgets['course-wishlist']      = CourseWishlistElementor::class;
+		$lp_widgets['course-wishlist-loop'] = CourseWishlistLoopElementor::class;
 
 		return $lp_widgets;
 	}

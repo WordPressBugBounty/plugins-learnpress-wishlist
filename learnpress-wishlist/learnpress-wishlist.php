@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name: LearnPress - Course Wishlist
- * Plugin URI: http://thimpress.com/learnpress
+ * Plugin URI: https://thimpress.com/product/learnpress-course-wishlist/
  * Description: Wishlist feature.
  * Author: ThimPress
- * Version: 4.0.8
+ * Version: 4.1.0
  * Author URI: http://thimpress.com
  * Tags: learnpress
  * Text Domain: learnpress-wishlist
  * Domain Path: /languages/
- * Require_LP_Version: 4.2.7-beta.0
+ * Require_LP_Version: 4.3.2.7
  * Requires Plugins: learnpress
  *
  * @package LearnPress-Course-Wishlist
@@ -18,6 +18,10 @@
 /**
  * Prevent loading this file directly
  */
+
+use LearnPress\Wishlist\TemplateHooks\CoursesWishlistTemplate;
+use LearnPress\Wishlist\TemplateHooks\CourseWishlistTemplate;
+
 defined( 'ABSPATH' ) || exit();
 
 const LP_ADDON_WISHLIST_FILE = __FILE__;
@@ -91,7 +95,11 @@ class LP_Addon_Wishlist_Preload {
 	 * Load addon
 	 */
 	public function load() {
-		self::$addon = LP_Addon::load( 'LP_Addon_Wishlist', 'inc/load.php', __FILE__ );
+		require_once 'vendor/autoload.php';
+		include_once 'inc/load.php';
+		self::$addon = LP_Addon_Wishlist::instance();
+		CourseWishlistTemplate::instance();
+		CoursesWishlistTemplate::instance();
 	}
 
 	public function show_note_errors_require_lp() {

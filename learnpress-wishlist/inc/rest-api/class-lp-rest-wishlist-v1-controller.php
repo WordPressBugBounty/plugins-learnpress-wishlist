@@ -59,7 +59,7 @@ if ( class_exists( 'LP_REST_Jwt_Posts_Controller' ) ) {
 				)
 			);
 
-			register_rest_route(
+			/*register_rest_route(
 				$this->namespace,
 				'/' . $this->rest_base . '/add_or_remove',
 				array(
@@ -76,7 +76,7 @@ if ( class_exists( 'LP_REST_Jwt_Posts_Controller' ) ) {
 						),
 					),
 				)
-			);
+			);*/
 		}
 
 		public function get_wishlists( $request ) {
@@ -174,7 +174,7 @@ if ( class_exists( 'LP_REST_Jwt_Posts_Controller' ) ) {
 					throw new Exception( esc_html__( 'No User.', 'learnpress' ) );
 				}
 
-				$wishlists     = LP_Addon_Wishlist::get_courses_wishlist( $user_id );
+				$wishlists = LP_Addon_Wishlist::get_courses_wishlist( $user_id );
 				if ( ! empty( $wishlists ) && in_array( $course_id, $wishlists ) ) {
 					$pos = array_search( $course_id, $wishlists );
 
@@ -227,9 +227,9 @@ if ( class_exists( 'LP_REST_Jwt_Posts_Controller' ) ) {
 		 *
 		 * @return LP_REST_Response
 		 * @since 4.0.8
-		 * @version 1.0.0
+		 * @version 1.0.1
 		 */
-		public function wishlist_toggle( WP_REST_Request $request ): LP_REST_Response {
+		/*public function wishlist_toggle( WP_REST_Request $request ): LP_REST_Response {
 			$course_id = $request->get_param( 'id' );
 			$user_id   = get_current_user_id();
 			$response  = new LP_REST_Response();
@@ -257,15 +257,16 @@ if ( class_exists( 'LP_REST_Jwt_Posts_Controller' ) ) {
 					$wish_list[] = $course_id;
 				}
 
-				update_user_meta( $user_id, '_lpr_wish_list', $wish_list );
+				LP_Addon_Wishlist::update_courses_wishlist( $user, $wish_list );
 
 				$response->data->wishlist = $wish_list;
-				$response->status = 'success';
+				$response->data->html     = LP_Addon_Wishlist_Preload::$addon->html_btn_ico_wishlist( $course, $user );
+				$response->status         = 'success';
 			} catch ( Throwable $e ) {
 				$response->message = $e->getMessage();
 			}
 
 			return $response;
-		}
+		}*/
 	}
 }
