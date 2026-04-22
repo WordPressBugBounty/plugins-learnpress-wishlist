@@ -4,7 +4,7 @@
  * Plugin URI: https://thimpress.com/product/learnpress-course-wishlist/
  * Description: Wishlist feature.
  * Author: ThimPress
- * Version: 4.1.0
+ * Version: 4.1.1
  * Author URI: http://thimpress.com
  * Tags: learnpress
  * Text Domain: learnpress-wishlist
@@ -25,6 +25,7 @@ use LearnPress\Wishlist\TemplateHooks\CourseWishlistTemplate;
 defined( 'ABSPATH' ) || exit();
 
 const LP_ADDON_WISHLIST_FILE = __FILE__;
+const LP_ADDON_WISHLIST_PATH = __DIR__;
 
 /**
  * Class LP_Addon_Wishlist_Preload
@@ -78,14 +79,16 @@ class LP_Addon_Wishlist_Preload {
 		if ( ! is_plugin_active( 'learnpress/learnpress.php' ) ) {
 			add_action( 'admin_notices', array( $this, 'show_note_errors_require_lp' ) );
 
-			deactivate_plugins( LP_ADDON_WISHLIST_BASENAME );
+			/*deactivate_plugins( LP_ADDON_WISHLIST_BASENAME );
 
 			if ( isset( $_GET['activate'] ) ) {
 				unset( $_GET['activate'] );
-			}
+			}*/
 
 			return;
 		}
+
+		require_once LP_ADDON_WISHLIST_PATH . '/vendor/autoload.php';
 
 		// Sure LP loaded.
 		add_action( 'learn-press/ready', array( $this, 'load' ) );
@@ -95,8 +98,7 @@ class LP_Addon_Wishlist_Preload {
 	 * Load addon
 	 */
 	public function load() {
-		require_once 'vendor/autoload.php';
-		include_once 'inc/load.php';
+		include_once LP_ADDON_WISHLIST_PATH . '/inc/load.php';
 		self::$addon = LP_Addon_Wishlist::instance();
 		CourseWishlistTemplate::instance();
 		CoursesWishlistTemplate::instance();

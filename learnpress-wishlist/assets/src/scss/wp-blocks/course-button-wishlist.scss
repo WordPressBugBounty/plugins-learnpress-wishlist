@@ -50,6 +50,12 @@ button.lp-button.wp-block-learnpress-course-button-wishlist {
 	}
 }
 
-.lp-single-offline-course__right .item-meta .lp-button.lp-button-wishlist-action {
-	margin-top: 20px;
+.lp-single-offline-course__right {
+	.course-button-wishlist__wrapper-no-css {
+		text-align: center;
+	}
+
+	.item-meta .lp-button.lp-button-wishlist-action {
+		margin-top: 20px;
+	}
 }

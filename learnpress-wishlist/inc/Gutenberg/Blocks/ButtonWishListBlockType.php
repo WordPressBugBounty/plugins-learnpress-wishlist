@@ -171,7 +171,6 @@ class ButtonWishListBlockType extends AbstractCourseBlockType {
 				'user_id'      => $userModel ? $userModel->get_id() : 0,
 				'attributes'   => $attributes,
 				'parsed_block' => $block->parsed_block,
-				'url_current'  => LP_Helper::getUrlCurrent(),
 			];
 
 			if ( ! isset( $args['buttons_both_status'] ) ) {
@@ -211,7 +210,7 @@ class ButtonWishListBlockType extends AbstractCourseBlockType {
 				esc_html__( 'Please %s to add this course to your wishlist.', 'learnpress-wishlist' ),
 				sprintf(
 					'<a href="%s" target="_blank">%s</a>',
-					learn_press_get_login_url( $data['url_current'] ),
+					learn_press_get_login_url( $data['url_current'] ?? '' ),
 					esc_html__( 'login', 'learnpress-wishlist' )
 				)
 			);

@@ -43,6 +43,9 @@ button.lp-button.wp-block-learnpress-course-button-wishlist:hover i {
   margin-top: -2px;
 }
 
+.lp-single-offline-course__right .course-button-wishlist__wrapper-no-css {
+  text-align: center;
+}
 .lp-single-offline-course__right .item-meta .lp-button.lp-button-wishlist-action {
   margin-top: 20px;
 }

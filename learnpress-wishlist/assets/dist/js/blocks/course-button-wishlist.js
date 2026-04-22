@@ -2,16 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/src/js/gutenberg/blocks/course-button-wishlist/block.json"
-/*!**************************************************************************!*\
-  !*** ./assets/src/js/gutenberg/blocks/course-button-wishlist/block.json ***!
-  \**************************************************************************/
-(module) {
-
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"learnpress/course-button-wishlist","title":"Course Button Wishlist","category":"learnpress-course-elements","icon":"heart","description":"Renders template Button Wishlist Course PHP templates.","textdomain":"learnpress-wishlist","keywords":["button wishlist course","learnpress"],"ancestor":["learnpress/single-course","learnpress/course-item-template"],"usesContext":["lpCourseData"],"attributes":{"textAlign":{"type":"string","default":"center"},"justifyContent":{"type":"string","default":"center"},"alignItems":{"type":"string","default":"center"},"width":{"type":"string","default":"100"},"layout":{"type":"string","default":"modern","enum":["classic","modern","icon-only"]}},"supports":{"multiple":true,"align":["wide","full"],"html":false,"typography":{"fontSize":true,"__experimentalDefaultControls":{"fontSize":true}},"color":{"background":true,"text":true,"__experimentalDefaultControls":{"background":true,"text":true}},"__experimentalBorder":{"color":true,"radius":true,"width":true,"__experimentalDefaultControls":{"width":false,"color":false,"radius":false}},"spacing":{"margin":true,"padding":true,"content":true,"__experimentalDefaultControls":{"margin":false,"padding":false,"content":true}}}}');
-
-/***/ },
-
 /***/ "./assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js"
 /*!***********************************************************************!*\
   !*** ./assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js ***!
@@ -250,6 +240,16 @@ const checkTemplatesCanLoadBlock = (templates, metadata, callBack) => {
 
 /***/ },
 
+/***/ "react/jsx-runtime"
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+(module) {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ },
+
 /***/ "@wordpress/block-editor"
 /*!*************************************!*\
   !*** external ["wp","blockEditor"] ***!
@@ -300,13 +300,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ },
 
-/***/ "react/jsx-runtime"
-/*!**********************************!*\
-  !*** external "ReactJSXRuntime" ***!
-  \**********************************/
+/***/ "./assets/src/js/gutenberg/blocks/course-button-wishlist/block.json"
+/*!**************************************************************************!*\
+  !*** ./assets/src/js/gutenberg/blocks/course-button-wishlist/block.json ***!
+  \**************************************************************************/
 (module) {
 
-module.exports = window["ReactJSXRuntime"];
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"learnpress/course-button-wishlist","title":"Course Button Wishlist","category":"learnpress-course-elements","icon":"heart","description":"Renders template Button Wishlist Course PHP templates.","textdomain":"learnpress-wishlist","keywords":["button wishlist course","learnpress"],"ancestor":["learnpress/single-course","learnpress/course-item-template"],"usesContext":["lpCourseData"],"attributes":{"textAlign":{"type":"string","default":"center"},"justifyContent":{"type":"string","default":"center"},"alignItems":{"type":"string","default":"center"},"width":{"type":"string","default":"100"},"layout":{"type":"string","default":"modern","enum":["classic","modern","icon-only"]}},"supports":{"multiple":true,"align":["wide","full"],"html":false,"typography":{"fontSize":true,"__experimentalDefaultControls":{"fontSize":true}},"color":{"background":true,"text":true,"__experimentalDefaultControls":{"background":true,"text":true}},"__experimentalBorder":{"color":true,"radius":true,"width":true,"__experimentalDefaultControls":{"width":false,"color":false,"radius":false}},"spacing":{"margin":true,"padding":true,"content":true,"__experimentalDefaultControls":{"margin":false,"padding":false,"content":true}}}}');
 
 /***/ }
 
@@ -322,12 +322,6 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
-/******/ 		// Check if module exists (development only)
-/******/ 		if (__webpack_modules__[moduleId] === undefined) {
-/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
-/******/ 			e.code = 'MODULE_NOT_FOUND';
-/******/ 			throw e;
-/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			// no module.id needed
@@ -336,6 +330,12 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module

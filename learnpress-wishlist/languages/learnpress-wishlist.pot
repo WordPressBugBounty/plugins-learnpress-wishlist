@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the LearnPress - Course Wishlist plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: LearnPress - Course Wishlist 4.1.0\n"
+"Project-Id-Version: LearnPress - Course Wishlist 4.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/learnpress-wishlist\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-02T11:14:46+03:00\n"
+"POT-Creation-Date: 2026-04-22T05:46:18+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnpress-wishlist\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. Plugin URI of the plugin
 #: learnpress-wishlist.php
-msgid "https://wordpress.org/plugins/learnpress-wishlist/"
+msgid "https://thimpress.com/product/learnpress-course-wishlist/"
 msgstr ""
 
 #. Description of the plugin
@@ -107,29 +107,29 @@ msgstr ""
 msgid "Course Wishlist Loop"
 msgstr ""
 
-#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:211
-#: inc/TemplateHooks/CourseWishlistTemplate.php:158
+#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:210
+#: inc/TemplateHooks/CourseWishlistTemplate.php:157
 #, php-format
 msgid "Please %s to add this course to your wishlist."
 msgstr ""
 
-#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:215
-#: inc/TemplateHooks/CourseWishlistTemplate.php:162
+#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:214
+#: inc/TemplateHooks/CourseWishlistTemplate.php:161
 msgid "login"
 msgstr ""
 
-#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:235
-#: inc/TemplateHooks/CourseWishlistTemplate.php:180
+#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:234
+#: inc/TemplateHooks/CourseWishlistTemplate.php:179
 msgid "Course added to wishlist."
 msgstr ""
 
-#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:239
-#: inc/TemplateHooks/CourseWishlistTemplate.php:184
+#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:238
+#: inc/TemplateHooks/CourseWishlistTemplate.php:183
 msgid "View Wishlist"
 msgstr ""
 
-#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:244
-#: inc/TemplateHooks/CourseWishlistTemplate.php:189
+#: inc/Gutenberg/Blocks/ButtonWishListBlockType.php:243
+#: inc/TemplateHooks/CourseWishlistTemplate.php:188
 msgid "Course removed from wishlist."
 msgstr ""
 
@@ -143,14 +143,14 @@ msgstr ""
 
 #: inc/load.php:297
 #: inc/TemplateHooks/CourseWishlistTemplate.php:32
-#: inc/TemplateHooks/CourseWishlistTemplate.php:214
+#: inc/TemplateHooks/CourseWishlistTemplate.php:213
 #: templates/button.php:25
 msgid "Add to Wishlist"
 msgstr ""
 
 #: inc/load.php:300
 #: inc/TemplateHooks/CourseWishlistTemplate.php:36
-#: inc/TemplateHooks/CourseWishlistTemplate.php:219
+#: inc/TemplateHooks/CourseWishlistTemplate.php:218
 #: templates/button.php:25
 msgid "Remove from Wishlist"
 msgstr ""
@@ -172,8 +172,8 @@ msgid "This course removed from your wishlist"
 msgstr ""
 
 #: inc/load.php:396
-#: inc/TemplateHooks/CourseWishlistTemplate.php:239
-#: inc/TemplateHooks/CourseWishlistTemplate.php:244
+#: inc/TemplateHooks/CourseWishlistTemplate.php:238
+#: inc/TemplateHooks/CourseWishlistTemplate.php:243
 msgid "Wishlist"
 msgstr ""
 

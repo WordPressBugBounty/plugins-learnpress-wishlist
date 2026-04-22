@@ -66,9 +66,8 @@ class CourseWishlistTemplate {
 		wp_enqueue_style( 'lp-course-wishlist' );
 
 		$args = [
-			'id_url'      => 'wishlist-action',
-			'course_id'   => $courseModel->get_id(),
-			'url_current' => LP_Helper::getUrlCurrent(),
+			'id_url'    => 'wishlist-action',
+			'course_id' => $courseModel->get_id(),
 		];
 
 		$args = $args + $data;
@@ -158,7 +157,7 @@ class CourseWishlistTemplate {
 				esc_html__( 'Please %s to add this course to your wishlist.', 'learnpress-wishlist' ),
 				sprintf(
 					'<a href="%s" target="_blank">%s</a>',
-					learn_press_get_login_url( $data['url_current'] ),
+					learn_press_get_login_url( $data['url_current'] ?? '' ),
 					esc_html__( 'login', 'learnpress-wishlist' )
 				)
 			);

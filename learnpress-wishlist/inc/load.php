@@ -588,10 +588,6 @@ if ( ! class_exists( 'LP_Addon_Wishlist' ) ) {
 		 * @version 1.0.1
 		 */
 		public function single_course_offline( array $section, CourseModel $courseModel, $user ): array {
-			if ( empty( $user ) ) {
-				return $section;
-			}
-
 			return Template::insert_value_to_position_array(
 				$section,
 				'after',
