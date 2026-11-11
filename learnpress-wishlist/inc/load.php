@@ -612,6 +612,7 @@ if ( ! class_exists( 'LP_Addon_Wishlist' ) ) {
 		public function load_js_css_on_archive_course() {
 			wp_enqueue_style( 'lp-course-wishlist' );
 			wp_enqueue_script( 'lp-course-wishlist' );
+			wp_enqueue_script( 'lp-course-wishlist-script' );
 		}
 
 		/**

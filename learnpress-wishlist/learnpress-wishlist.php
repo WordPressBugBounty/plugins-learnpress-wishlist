@@ -4,7 +4,7 @@
  * Plugin URI: https://thimpress.com/product/learnpress-course-wishlist/
  * Description: Wishlist feature.
  * Author: ThimPress
- * Version: 4.1.1
+ * Version: 4.1.2
  * Author URI: http://thimpress.com
  * Tags: learnpress
  * Text Domain: learnpress-wishlist

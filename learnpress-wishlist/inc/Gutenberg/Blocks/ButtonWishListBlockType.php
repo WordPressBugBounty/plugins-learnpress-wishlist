@@ -202,7 +202,7 @@ class ButtonWishListBlockType extends AbstractCourseBlockType {
 		$course_id   = $data['course_id'] ?? 0;
 		$courseModel = CourseModel::find( $course_id, true );
 
-		$user_id   = $data['user_id'] ?? 0;
+		$user_id   = get_current_user_id();
 		$userModel = UserModel::find( $user_id, true );
 		if ( ! $userModel ) {
 			$object->content = $data['buttons_both_status']['add'];

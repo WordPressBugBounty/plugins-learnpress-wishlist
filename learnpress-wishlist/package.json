@@ -1,0 +1,37 @@
+{
+	"name": "learnpress-wishlist",
+	"version": "1.0.1",
+	"description": "",
+	"dependencies": {
+		"toastify-js": "1.12.0"
+	},
+	"devDependencies": {
+		"@automattic/wp-babel-makepot": "1.2.0",
+		"@wordpress/babel-preset-default": "^8.33.1",
+		"@wordpress/scripts": "^32.0.0",
+		"babel-loader": "^10.1.1",
+		"del": "8.0.1",
+		"eslint": "9.36.0",
+		"gulp": "5.0.1",
+		"gulp-clean-css": "4.3.0",
+		"gulp-cli": "3.1.0",
+		"gulp-rename": "2.1.0",
+		"gulp-replace": "1.1.4",
+		"gulp-rtlcss": "2.0.0",
+		"gulp-sass": "6.0.1",
+		"gulp-zip": "6.1.0",
+		"read-file": "0.2.0",
+		"sass": "1.99.0",
+		"style-loader": "4.0.0",
+		"webpack-glob-entries": "1.0.1"
+	},
+	"scripts": {
+		"start": "wp-scripts start NODE_ENV=develop",
+		"build": "wp-scripts build NODE_ENV=production",
+		"format": "wp-scripts format assets/src/**/*.js",
+		"watchCss": "gulp styles && gulp watch",
+		"makepot": "wp i18n make-pot . languages/learnpress-wishlist.pot --skip-audit --exclude=\"test,release,build,tools,dist,node_modules,vendor,assets,languages\"",
+		"build-makepot-zip": "composer update --no-dev && npm run build && npm run makepot && gulp",
+		"release": "node build-release.js"
+	}
+}

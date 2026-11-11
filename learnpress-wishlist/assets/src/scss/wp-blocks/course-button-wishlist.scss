@@ -34,18 +34,20 @@ button.lp-button.wp-block-learnpress-course-button-wishlist {
 		pointer-events: none;
 		opacity: 0.8;
 		&:before{
-			display: inline-block;
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			font-family: 'lp-icon';
 			content: "\f110";
 			animation: lp-rotating 1s linear infinite;
-			margin-right: 5px;
+			//line-height: 1;
 			font-variant: normal;
 			text-transform: none;
-			line-height: 1;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
-			vertical-align: middle;
-			margin-top: -2px;
+			color: black;
 		}
 	}
 }
