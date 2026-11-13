@@ -23,5 +23,5 @@ global $post;
 	</a>
 	<?php do_action( 'learn_press_after_profile_tab_wishlist_loop_course' ); ?>
 
-	<?php LP_Addon_Wishlist_Preload::$addon->wishlist_button( $post->ID ); ?>
+ <?php LP_Addon_Wishlist_Preload::$addon->wishlist_button( $post->ID ); ?>
 </li>

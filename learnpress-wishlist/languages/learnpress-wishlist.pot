@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the LearnPress - Course Wishlist plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: LearnPress - Course Wishlist 4.1.1\n"
+"Project-Id-Version: LearnPress - Course Wishlist 4.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/learnpress-wishlist\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-22T05:46:18+03:00\n"
+"POT-Creation-Date: 2026-11-13T03:25:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: learnpress-wishlist\n"
@@ -46,21 +46,33 @@ msgstr ""
 
 #: config/elementor/wishlist.php:16
 #: config/elementor/wishlist_loop.php:16
+#: assets/dist/js/blocks/course-button-wishlist.js:119
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js:100
+#: assets/dist/js/blocks/course-button-wishlist.js:100
 msgid "Layout"
 msgstr ""
 
 #: config/elementor/wishlist.php:18
 #: config/elementor/wishlist_loop.php:18
+#: assets/dist/js/blocks/course-button-wishlist.js:122
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js:103
+#: assets/dist/js/blocks/course-button-wishlist.js:103
 msgid "Classic"
 msgstr ""
 
 #: config/elementor/wishlist.php:19
 #: config/elementor/wishlist_loop.php:19
+#: assets/dist/js/blocks/course-button-wishlist.js:125
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js:104
+#: assets/dist/js/blocks/course-button-wishlist.js:104
 msgid "Modern"
 msgstr ""
 
 #: config/elementor/wishlist.php:20
 #: config/elementor/wishlist_loop.php:20
+#: assets/dist/js/blocks/course-button-wishlist.js:128
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js:105
+#: assets/dist/js/blocks/course-button-wishlist.js:105
 msgid "Icon Only"
 msgstr ""
 
@@ -145,6 +157,9 @@ msgstr ""
 #: inc/TemplateHooks/CourseWishlistTemplate.php:32
 #: inc/TemplateHooks/CourseWishlistTemplate.php:213
 #: templates/button.php:25
+#: assets/dist/js/blocks/course-button-wishlist.js:83
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js:67
+#: assets/dist/js/blocks/course-button-wishlist.js:67
 msgid "Add to Wishlist"
 msgstr ""
 
@@ -174,6 +189,9 @@ msgstr ""
 #: inc/load.php:396
 #: inc/TemplateHooks/CourseWishlistTemplate.php:238
 #: inc/TemplateHooks/CourseWishlistTemplate.php:243
+#: assets/dist/js/blocks/course-button-wishlist.js:93
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js:75
+#: assets/dist/js/blocks/course-button-wishlist.js:75
 msgid "Wishlist"
 msgstr ""
 
@@ -207,10 +225,51 @@ msgstr ""
 msgid "My Wishlist Courses"
 msgstr ""
 
+#: learnpress-wishlist.php:137
+#, php-format
+msgid "Addon %1$s require install LearnPress version %2$s or later"
+msgstr ""
+
 #: templates/button.php:24
 msgid "Processing..."
 msgstr ""
 
 #: templates/user-wishlist.php:27
 msgid "No courses in your wishlist!"
+msgstr ""
+
+#: assets/dist/js/blocks/course-button-wishlist.js:117
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js:98
+#: assets/dist/js/blocks/course-button-wishlist.js:98
+msgid "Settings"
+msgstr ""
+
+#: assets/dist/js/blocks/course-button-wishlist.js:135
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/edit.js:111
+#: assets/dist/js/blocks/course-button-wishlist.js:111
+msgid "Width"
+msgstr ""
+
+#: assets/dist/js/gutenberg/blocks/course-button-wishlist/block.json
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/block.json
+msgctxt "block title"
+msgid "Course Button Wishlist"
+msgstr ""
+
+#: assets/dist/js/gutenberg/blocks/course-button-wishlist/block.json
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/block.json
+msgctxt "block description"
+msgid "Renders template Button Wishlist Course PHP templates."
+msgstr ""
+
+#: assets/dist/js/gutenberg/blocks/course-button-wishlist/block.json
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/block.json
+msgctxt "block keyword"
+msgid "button wishlist course"
+msgstr ""
+
+#: assets/dist/js/gutenberg/blocks/course-button-wishlist/block.json
+#: assets/src/js/gutenberg/blocks/course-button-wishlist/block.json
+msgctxt "block keyword"
+msgid "learnpress"
 msgstr ""

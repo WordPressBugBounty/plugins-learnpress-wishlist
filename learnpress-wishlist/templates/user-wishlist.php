@@ -20,7 +20,7 @@ global $post;
 				<?php
 				foreach ( $wishlist as $post ) {
 					?>
-					<?php LP_Addon_Wishlist_Preload::$addon->get_template( 'wishlist-content.php' ); ?>
+ 				<?php LP_Addon_Wishlist_Preload::$addon->get_template( 'wishlist-content.php' ); ?>
 				<?php } ?>
 			</ul>
 		<?php } ?>

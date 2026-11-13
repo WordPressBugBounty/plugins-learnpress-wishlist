@@ -10,7 +10,7 @@ namespace LearnPress\Wishlist\Elementor\Widgets;
 use LearnPress\ExternalPlugin\Elementor\LPElementorWidgetBase;
 use LearnPress\Models\CourseModel;
 use LearnPress\Wishlist\TemplateHooks\CourseWishlistTemplate;
-use LP_Addon_Wishlist;
+use LP_Addon_Wishlist_Preload;
 use LP_Debug;
 use Throwable;
 
@@ -29,7 +29,7 @@ class CourseWishlistLoopElementor extends LPElementorWidgetBase {
 	}
 
 	protected function register_controls() {
-		$this->controls = require_once LP_Addon_Wishlist::instance()->plugin_folder_path . '/config/elementor/wishlist_loop.php';
+		$this->controls = require_once LP_Addon_Wishlist_Preload::$addon->plugin_folder_path . '/config/elementor/wishlist_loop.php';
 		parent::register_controls();
 	}
 

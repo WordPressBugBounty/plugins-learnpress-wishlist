@@ -78,6 +78,13 @@ class CoursesWishlistTemplate {
 		);
 	}
 
+	/**
+	 * Render courses html
+	 *
+	 * @param array $data
+	 *
+	 * @return stdClass
+	 */
 	public static function render_courses( array $data = [] ): stdClass {
 		$wishlist_course_of_user = LP_Addon_Wishlist::get_courses_wishlist( get_current_user_id() );
 		$filter                  = new CourseJsonFilter();
@@ -97,50 +104,53 @@ class CoursesWishlistTemplate {
 		$listCoursesTemplate = ListCoursesTemplate::instance();
 
 		// HTML section courses.
-		$html_courses = '';
+		$html = '';
 		if ( empty( $courses ) ) {
-			$html_courses = Template::print_message( __( 'No courses found', 'learnpress' ), 'info', false );
+			$html = Template::print_message( __( 'No courses found', 'learnpress' ), 'info', false );
 		} else {
+			$html_courses = '';
 			foreach ( $courses as $courseObj ) {
 				$course        = CourseModel::find( $courseObj->ID, true );
 				$html_courses .= $listCoursesTemplate::render_course( $course, $data );
 			}
+
+			$section_courses = apply_filters(
+				'learn-press/layout/list-courses/section/courses',
+				[
+					'wrap'     => sprintf(
+						'<ul class="learn-press-courses wishlist lp-list-courses-no-css %1$s" data-layout="%1$s">',
+						$skin
+					),
+					'courses'  => $html_courses,
+					'wrap_end' => '</ul>',
+				],
+				$courses,
+				$data
+			);
+
+			// Pagination html
+			$data_pagination = [
+				'total_pages' => $total_pages,
+				'base'        => $data['url_current'] ?? '',
+				'paged'       => $data['paged'] ?? 1,
+			];
+			$html_pagination = Template::instance()->html_pagination( $data_pagination );
+
+			$section = apply_filters(
+				'learn-press/layout/list-courses/section',
+				[
+					'courses'    => Template::combine_components( $section_courses ),
+					'pagination' => $html_pagination,
+				],
+				$courses,
+				$data
+			);
+
+			$html = Template::combine_components( $section );
 		}
 
-		$section_courses = apply_filters(
-			'learn-press/layout/list-courses/section/courses',
-			[
-				'wrap'     => sprintf(
-					'<ul class="learn-press-courses wishlist lp-list-courses-no-css %1$s" data-layout="%1$s">',
-					$skin
-				),
-				'courses'  => $html_courses,
-				'wrap_end' => '</ul>',
-			],
-			$courses,
-			$data
-		);
-
-		// Pagination html
-		$data_pagination = [
-			'total_pages' => $total_pages,
-			'base'        => $data['url_current'] ?? '',
-			'paged'       => $data['paged'] ?? 1,
-		];
-		$html_pagination = Template::instance()->html_pagination( $data_pagination );
-
-		$section = apply_filters(
-			'learn-press/layout/list-courses/section',
-			[
-				'courses'    => Template::combine_components( $section_courses ),
-				'pagination' => $html_pagination,
-			],
-			$courses,
-			$data
-		);
-
 		$content              = new stdClass();
-		$content->content     = Template::combine_components( $section );
+		$content->content     = $html;
 		$content->total_pages = $total_pages;
 		$content->paged       = $paged;
 

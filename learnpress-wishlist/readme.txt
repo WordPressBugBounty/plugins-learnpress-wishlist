@@ -3,9 +3,9 @@ Contributors: thimpress, tunnhn, kendy73
 Donate link:
 Tags: lms, elearning, e-learning, learning management system, education.
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.1.2
+Stable tag: 4.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,9 @@ Check out <a href="http://docs.thimpress.com/learnpress" target="_blank">LearnPr
 1. LearnPress Prerequisite screenshot.
 
 == Changelog ==
+
+= 4.1.3 (2026-11-13) =
+* Fixed: minor bugs.
 
 = 4.1.2 (2026-11-11) =
 * Fixed: security vulnerability in wishlist button AJAX callback — user_id must be derived from session instead of client input.
